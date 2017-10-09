@@ -1,7 +1,7 @@
 {
   "name": "drizzly-cloud",
   "version": "1.0.0",
-  "description": "",
+  "description": "Front-end app to visualize Drizzly API",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
@@ -31,5 +31,9 @@
   "dependencies": {
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
+  },
+  "repository" :
+  { "type" : "git"
+  , "url" : "https://github.com/wrobbinz/drizzly-cloud"
   }
 }
