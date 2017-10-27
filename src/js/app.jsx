@@ -1,15 +1,31 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
-
+import axios from 'axios'
 import '../css/style.css'
-import cloudImage from '../assets/cloud.png'
+
 
 export default class Cloud extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      words: [],
+    }
+  }
+  componentDidMount() {
+    axios.get('http://localhost:6060/api/v1/news')
+      .then((res) => {
+        const words = res.data.data
+        console.log(words)
+        this.setState({ words })
+      })
+  }
   render() {
     return (
       <div>
-        Drizzly News
-        <img src={cloudImage} alt="cloud" />
+        <ul>
+          {this.state.words.map(word =>
+            <li key={word.id}>{word.word}</li>)}
       </div>
     )
   }
