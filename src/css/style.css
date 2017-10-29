@@ -1,7 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 body {
   background: #f9fafb;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Quicksand, Helvetica, Arial, sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 30px;
+  transition: 2s;
+  -webkit-transition: 2s;
 }
+
+text {
+  cursor: pointer;
+  cursor: hand;
+}
+
+text:hover {
+  opacity: 0.7;
+}
+
+
