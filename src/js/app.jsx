@@ -14,7 +14,7 @@ export default class Cloud extends Component {
     }
   }
   componentDidMount() {
-    axios.get('http://localhost:6060/api/v1/news')
+    axios.get('http://localhost:6060/api/v1/news?limit=250')
       .then((res) => {
         const words = res.data.data
         this.setState({ words })
