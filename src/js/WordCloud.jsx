@@ -91,7 +91,7 @@ class WordCloud extends Component {
           .attr('transform', d => `translate(${[d.x, d.y]})rotate(${d.rotate})`)
           .text(d => d.text)
           .on('click', (d) => {
-            window.open(d.url[Math.floor(Math.random() * d.url.length)], '_blank')
+            window.open(d.sources[Math.floor(Math.random() * d.sources.length)].url, '_blank')
           })
       })
 
