@@ -70,6 +70,7 @@ class WordCloud extends Component {
       .padding(padding)
       .rotate(rotate)
       .fontSize(fontSizeMapper)
+      .spiral('rectangular')
       .on('end', (words) => {
         select(this.wordCloud)
           .append('svg')
