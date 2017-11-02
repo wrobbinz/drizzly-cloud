@@ -12,7 +12,7 @@ const paths = {
 
 // Webpack configuration
 export default {
-  entry: path.join(paths.JS, 'app.jsx'),
+  entry: ['babel-polyfill', path.join(paths.JS, 'app.js')],
   output: {
     path: paths.DIST,
     filename: 'app.bundle.js',
@@ -27,7 +27,7 @@ export default {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.js$/,
         exclude: /node_modules/,
         use: [
           'babel-loader',
@@ -51,6 +51,6 @@ export default {
   },
 
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js'],
   },
 }
