@@ -10,7 +10,7 @@ async function createCloud(cloud) {
   try {
     words = await getWords()
   } catch (err) {
-    console.log(err.message)
+    console.log(err.message) // eslint-disable-line no-console
   }
   cloud.update(words)
   setTimeout(() => { createCloud(cloud) }, INTERVAL)

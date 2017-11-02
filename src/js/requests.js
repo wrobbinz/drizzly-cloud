@@ -6,7 +6,7 @@ async function getWords() {
   try {
     res = await axios.get('http://localhost:6060/api/v1/news?limit=250')
   } catch (err) {
-    console.log(err.message)
+    console.log(err.message) // eslint-disable-line no-console
   }
   return res.data.data
 }
