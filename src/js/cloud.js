@@ -57,15 +57,7 @@ function wordCloud(selector) {
       .attr('font-size', 1)
       .remove()
   }
-
-
-  // Use the module pattern to encapsulate the visualisation code. We'll
-  // expose only the parts that need to be public.
   return {
-    // Recompute the word cloud for a new set of words. This method will
-    // asycnhronously call draw when the layout has been computed.
-    // The outside world will need to call this function, so make it part
-    // of the wordCloud return value.
     update(words) {
       d3cloud()
         .size([width, height])
