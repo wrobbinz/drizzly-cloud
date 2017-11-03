@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:500');
 
 body {
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  min-height: 100vh;
   background: #f9fafb;
   font-family: Quicksand, Helvetica, Arial, sans-serif;
   font-size: 16px;
@@ -21,4 +25,41 @@ text:hover {
   -webkit-transition: opacity 0.1s;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main > *, header, footer {
+  margin: 4px;
+  padding: 5px;
+  border-radius: 7px;
+}
+
+main {
+  display: flex;
+  flex-basis: 100vw;
+}
+
+header, footer {
+  flex-basis: 100px;
+}
+
+
+@media all and (max-width: 640px) {
+  main {
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  header, footer {
+    flex-basis: 50px;
+  }
+}

@@ -4,13 +4,12 @@ import { select } from 'd3-selection'
 import {} from 'd3-transition'
 
 function wordCloud(selector) {
-  const width = 900
-  const height = 500
+  const width = window.innerWidth
+  const height = window.innerHeight - 120
   const padding = 5
   const fill = scaleLinear()
     .domain([0, 1, 2, 3, 4, 5, 6, 10, 15, 20, 100])
     .range(['#bf4240', '#122336', '#14243D', '#1B3650', '#1B3E50', '#265073', '#2E638A', '#337599', '#397EAC', '#4B95C3', '#579AC7', '#6AA1CD'])
-
   // Construct the word cloud's SVG element
   const svg = select(selector).append('svg')
     .attr('class', 'word-cloud')
@@ -65,7 +64,7 @@ function wordCloud(selector) {
         .words(words)
         .padding(padding)
         .rotate(() => (Math.random() < 0.12 ? 90 : 0))
-        .fontSize(d => d.value)
+        .fontSize(d => Math.log1p(d.value) * 8)
         .spiral('rectangular')
         .on('end', draw)
         .start()
