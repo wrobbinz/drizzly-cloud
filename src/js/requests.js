@@ -2,14 +2,13 @@ import axios from 'axios'
 
 
 async function getWords() {
+  let res
   try {
-    const host = 'http://localhost:6060'
-    const limit = 250
-    const res = await axios.get(`${host}/api/v1/words?limit=${limit}`)
-    return res.data.data
+    res = await axios.get('http://localhost:6060/api/v1/news?limit=250')
   } catch (err) {
-    throw new Error('GET request to server failed')
+    console.log(err.message) // eslint-disable-line no-console
   }
+  return res.data.data
 }
 
 export default getWords
